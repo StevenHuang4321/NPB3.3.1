@@ -23,8 +23,8 @@ c---------------------------------------------------------------------
       integer i, j, k, c, m, requests(0:11), p0, p1, 
      >     p2, p3, p4, p5, b_size(0:5), ss(0:5), 
      >     sr(0:5), error, statuses(MPI_STATUS_SIZE, 0:11)
-      double precision
-     > u       (5,  -2:IMAX+1,-2:JMAX+1,-2:KMAX+1, maxcells)
+c      double precision
+c     > u       (5,  -2:IMAX+1,-2:JMAX+1,-2:KMAX+1, maxcells)
 c---------------------------------------------------------------------
 c     exit immediately if there are no faces to be copied           
 c---------------------------------------------------------------------

@@ -249,7 +249,7 @@ c---------------------------------------------------------------------
       pointer(ptr_rho_i, rho_i)
       pointer(ptr_square, square)
       pointer(ptr_forcing, forcing)
-      pointer(ptr_u, u)
+c      pointer(ptr_u, u)
       pointer(ptr_u_old, u_odd)
       pointer(ptr_u_new, u_even)
       pointer(ptr_rhs, rhs)
@@ -260,7 +260,7 @@ c---------------------------------------------------------------------
       pointer(ptr_u_copy, u_copy)
       pointer(ptr_u_copy2, u_copy2)
 
-      common /fields/  ptr_u, ptr_us, ptr_vs, ptr_ws, 
+      common /fields/   ptr_us, ptr_vs, ptr_ws, 
      >                 ptr_qs, ptr_rho_i, ptr_square, 
      >                 ptr_rhs, ptr_forcing, ptr_lhsc, 
      >                 ptr_in_buffer, ptr_out_buffer,

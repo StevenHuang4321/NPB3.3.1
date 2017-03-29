@@ -851,8 +851,8 @@ void c_memcpy_nek_(void *src, int *len){
   
 }
 void c_switch_(void **a, void **b){
-  void tmp = a;
-  a = b;
+  void *tmp = *a;
+  *a = *b;
   *b = tmp;
 }
 

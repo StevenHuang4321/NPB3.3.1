@@ -275,7 +275,6 @@ c       call unimem_malloc(ptr_forcing, sizeof(forcing), data_pos)
        call unimem_malloc(ptr_forcing, sizeof(forcing), 1)
 
 c       call unimem_malloc(ptr_u, sizeof(u), data_pos)
-       call unimem_malloc(ptr_u, sizeof(u), 1)
        call unimem_malloc(ptr_u_new, sizeof(u), 1)
        call unimem_malloc(ptr_u_old, sizeof(u), 1)
 c       call unimem_malloc(ptr_rhs, sizeof(rhs), data_pos)
