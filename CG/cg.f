@@ -1488,7 +1488,10 @@ c----------------------------------------------------------------
 c      pointer (ptr_k, k)
       pointer (ptr_x, x)
       pointer (ptr_w, w)
-
+      pointer (ptr_p,p)
+      pointer (ptr_r,r)
+      pointer (ptr_z,z)
+      
       pointer (ptr_p_n, p_e)
       pointer (ptr_p_o, p_o)
       pointer (ptr_r_n, r_e)      
