@@ -1,4 +1,4 @@
-      program
+      program test
       implicit none
       double precision t, mpi_wtime
       external mpi_wtime

@@ -2,7 +2,7 @@
 c---------------------------------------------------------------------
 c---------------------------------------------------------------------
 
-        subroutine verify(no_time_steps, class, verified)
+        subroutine verify(u,no_time_steps, class, verified)
 
 c---------------------------------------------------------------------
 c---------------------------------------------------------------------
@@ -31,12 +31,12 @@ c   compute the error norm and the residual norm, and exit if not printing
 c---------------------------------------------------------------------
 
         if (iotype .ne. 0) then
-           call accumulate_norms(xce)
+           call accumulate_norms(u,xce)
         else
-           call error_norm(xce)
+           call error_norm(u,xce)
         endif
 
-        call copy_faces
+        call copy_faces(u)
 
         call rhs_norm(xcr)
 

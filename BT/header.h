@@ -250,8 +250,8 @@ c---------------------------------------------------------------------
       pointer(ptr_square, square)
       pointer(ptr_forcing, forcing)
       pointer(ptr_u, u)
-      pointer(ptr_u_odd, u_odd)
-      pointer(ptr_u_even, u_even)
+      pointer(ptr_u_old, u_odd)
+      pointer(ptr_u_new, u_even)
       pointer(ptr_rhs, rhs)
       pointer(ptr_lhsc, lhsc)
       pointer(ptr_backsub_info, backsub_info)
@@ -265,7 +265,8 @@ c---------------------------------------------------------------------
      >                 ptr_rhs, ptr_forcing, ptr_lhsc, 
      >                 ptr_in_buffer, ptr_out_buffer,
      >                 ptr_backsub_info, ptr_u_copy,
-     >                 ptr_u_copy2
+     >                 ptr_u_copy2,
+     >                 ptr_u_old,ptr_u_new
 
       double precision cv(-2:MAX_CELL_DIM+1),   rhon(-2:MAX_CELL_DIM+1),
      >                 rhos(-2:MAX_CELL_DIM+1), rhoq(-2:MAX_CELL_DIM+1),

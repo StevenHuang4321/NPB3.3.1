@@ -276,7 +276,8 @@ c       call unimem_malloc(ptr_forcing, sizeof(forcing), data_pos)
 
 c       call unimem_malloc(ptr_u, sizeof(u), data_pos)
        call unimem_malloc(ptr_u, sizeof(u), 1)
-
+       call unimem_malloc(ptr_u_new, sizeof(u), 1)
+       call unimem_malloc(ptr_u_old, sizeof(u), 1)
 c       call unimem_malloc(ptr_rhs, sizeof(rhs), data_pos)
        call unimem_malloc(ptr_rhs, sizeof(rhs), 1)
 
@@ -568,7 +569,7 @@ c             set default to No-File-Hints with a value of 0
 
        call set_constants
 
-       call initialize
+       call initialize(u_odd)
 
        call setup_btio
        idump = 0
@@ -582,8 +583,8 @@ c             set default to No-File-Hints with a value of 0
 c---------------------------------------------------------------------
 c      do one time step to touch all code, and reinitialize
 c---------------------------------------------------------------------
-       call adi
-       call initialize
+       call adi(u_even, u_odd)
+       call initialize(u_even)
 
 c---------------------------------------------------------------------
 c      Synchronize before placing time stamp
@@ -598,12 +599,11 @@ c---------------------------------------------------------------------
 
        call timer_start(1)
 c-------------------------------main_loop------------------------------
-c       do  step = 1, niter
+       do  step = 1, niter
 C       do step = 1, 20
-       do step = 1, 25
 c          call begin_one_iteration(main_loop)
 c          call begin_one_phase
-
+          call c_switch(ptr_u_new,ptr_u_old)
           if (node .eq. root) then
              if (mod(step, 20) .eq. 0 .or. step .eq. niter .or.
      >           step .eq. 1) then
@@ -612,9 +612,9 @@ c          call begin_one_phase
              endif
           endif
 c          print *, "node = ", node, "iotype = ", iotype
-          call adi
+          call adi(u_odd,u_even)
 c------------------kai-------------------------------                                                                                             
-          call c_dram_cache_cp(ptr_u_copy,ptr_u, sizeof(u))                                                                                      
+c          call c_dram_cache_cp(ptr_u_copy,ptr_u, sizeof(u))                                                                                      
 c          call c_dram_cache_move(ptr_u_copy,ptr_u, sizeof(u))
 
 c          call c_memcpy(ptr_u_copy2, ptr_u_copy, sizeof(u))                                                                                      
@@ -625,8 +625,8 @@ c         call c_memwrite(ptr_u_copy, sizeof(t1), sizeof(u_copy),
 c     >         curr_rank, 1) 
 c         call c_memwrite(ptr_u_copy, sizeof(t1), sizeof(u_copy),
 c     >         curr_rank, 2)
-         call c_memwrite(ptr_u_copy, sizeof(t1), sizeof(u_copy),
-     >         curr_rank, 3)
+c         call c_memwrite(ptr_u_copy, sizeof(t1), sizeof(u_copy),
+c     >         curr_rank, 3)
                                                                           
 c----------------------------------------------------- 
           if (iotype .ne. 0) then
@@ -638,7 +638,7 @@ c-----------------------------------------------------
                       rd_interval = 1
                   endif
                   call timer_start(2)
-                  call output_timestep
+                  call output_timestep(u_odd)
                   call timer_stop(2)
                   idump = idump + 1
               endif
@@ -655,7 +655,7 @@ c------------------------------------------------------------------------
        call timer_stop(1)
        t = timer_read(1)
 
-       call verify(niter, class, verified)
+       call verify(u_odd,niter, class, verified)
 c----------kai---------
        call c_print_timer(curr_rank)
 

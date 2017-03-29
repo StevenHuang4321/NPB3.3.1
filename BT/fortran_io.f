@@ -34,7 +34,7 @@ c---------------------------------------------------------------------
 c---------------------------------------------------------------------
 c---------------------------------------------------------------------
 
-      subroutine output_timestep
+      subroutine output_timestep(u)
 
 c---------------------------------------------------------------------
 c---------------------------------------------------------------------
@@ -67,7 +67,7 @@ c---------------------------------------------------------------------
       if (rd_interval .gt. 0) then
          if (idump_sub .ge. rd_interval) then
 
-            call acc_sub_norms(idump+1)
+            call acc_sub_norms(u,idump+1)
 
             idump_sub = 0
          endif
@@ -79,7 +79,7 @@ c---------------------------------------------------------------------
 c---------------------------------------------------------------------
 c---------------------------------------------------------------------
 
-      subroutine acc_sub_norms(idump_cur)
+      subroutine acc_sub_norms(u,idump_cur)
 
       include 'header.h'
       include 'mpinpb.h'
@@ -114,7 +114,7 @@ c---------------------------------------------------------------------
 
         if (node .eq. root) print *, 'Reading data set ', ii+ichunk
 
-        call error_norm(xce_single)
+        call error_norm(u,xce_single)
         do m = 1, 5
            xce_sub(m) = xce_sub(m) + xce_single(m)
         end do
@@ -139,7 +139,7 @@ c---------------------------------------------------------------------
 c---------------------------------------------------------------------
 c---------------------------------------------------------------------
 
-      subroutine accumulate_norms(xce_acc)
+      subroutine accumulate_norms(u,xce_acc)
 
 c---------------------------------------------------------------------
 c---------------------------------------------------------------------
@@ -157,11 +157,11 @@ c---------------------------------------------------------------------
 
 c     clear the last time step
 
-      call clear_timestep
+      call clear_timestep(u)
 
 c     read back the time steps and accumulate norms
 
-      call acc_sub_norms(idump)
+      call acc_sub_norms(u,idump)
 
       close(unit=99)
 

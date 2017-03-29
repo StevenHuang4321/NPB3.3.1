@@ -1,0 +1,5 @@
+bin/*
+**/*.o
+**/npbparams.h
+sys/setparams
+sys/setparams.dSYM/
