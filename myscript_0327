@@ -1,0 +1,24 @@
+#!/bin/bash
+#memwr
+#mpirun -np 16 -host n03,n05,n06,n07 ./bin/cg.C.16_memwr | tee finalresult/cg_c_16_1_8bw_memwr.log
+#mpirun -np 16 -host n03,n05,n06,n07 ./bin/ft.C.16_memwr | tee finalresult/ft_c_16_1_8bw_memwr.log
+#mpirun -np 16 -host n03,n05,n06,n07 ./bin/bt.C.16_memwr | tee finalresult/bt_c_16_1_8bw_memwr.log
+mpirun -np 16 -host n03,n05,n06,n07 ./bin/lu.C.16_memwr | tee finalresult/lu_c_16_1_8bw_memwr2.log
+#mpirun -np 16 -host n03,n05,n06,n07 ./bin/sp.C.16_memwr | tee finalresult/sp_c_16_1_8bw_memwr.log
+#mpirun -np 16 -host n03,n05,n06,n07 ./bin/mg.C.16_memwr | tee finalresult/mg_c_16_1_8bw_memwr.log
+#diskwr_local
+#mpirun -np 16 -host n03,n05,n06,n07 ./bin/cg.C.16_diskwr_local | tee finalresult/cg_c_16_1_8bw_diskwr_local.log
+#mpirun -np 16 -host n03,n05,n06,n07 ./bin/ft.C.16_diskwr_local | tee finalresult/ft_c_16_1_8bw_diskwr_local.log
+#mpirun -np 16 -host n03,n05,n06,n07 ./bin/bt.C.16_diskwr_local | tee finalresult/bt_c_16_1_8bw_diskwr_local.log
+mpirun -np 16 -host n03,n05,n06,n07 ./bin/lu.C.16_diskwr_local | tee finalresult/lu_c_16_1_8bw_diskwr_local2.log
+#mpirun -np 16 -host n03,n05,n06,n07 ./bin/sp.C.16_diskwr_local | tee finalresult/sp_c_16_1_8bw_diskwr_local.log
+#mpirun -np 16 -host n03,n05,n06,n07 ./bin/mg.C.16_diskwr_local | tee finalresult/mg_c_16_1_8bw_diskwr_local.log
+#diskwr_remote
+#mpirun -np 16 -host n03,n05,n06,n07 ./bin/cg.C.16_diskwr_remote | tee finalresult/cg_c_16_1_8bw_diskwr_remote.log
+#mpirun -np 16 -host n03,n05,n06,n07 ./bin/ft.C.16_diskwr_remote | tee finalresult/ft_c_16_1_8bw_diskwr_remote.log
+#mpirun -np 16 -host n03,n05,n06,n07 ./bin/bt.C.16_diskwr_remote | tee finalresult/bt_c_16_1_8bw_diskwr_remote.log
+mpirun -np 16 -host n03,n05,n06,n07 ./bin/lu.C.16_diskwr_remote | tee finalresult/lu_c_16_1_8bw_diskwr_remote2.log
+#mpirun -np 16 -host n03,n05,n06,n07 ./bin/sp.C.16_diskwr_remote | tee finalresult/sp_c_16_1_8bw_diskwr_remote.log
+#mpirun -np 16 -host n03,n05,n06,n07 ./bin/mg.C.16_diskwr_remote | tee finalresult/mg_c_16_1_8bw_diskwr_remote.log
+
+

@@ -1,0 +1,1498 @@
+          -1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+ colidx: add:      140492950458368 size:             12150060
+ a: add:      140492445896704 size:             24300120
+ w: add:      140492945637376 size:               300016
+ z: add:      140492946849792 size:               300016
+ p: add:      140492946546688 size:               300016
+ r: add:      140492945940480 size:               300016
+ q: add:      140492946243584 size:               300016
+ rowst: size:               600004
+ x size:               300016
+ v size:              1200008
+ aelt size:             24300120
+ acol size:             12150060
+ arow size:             12150060
+ iv size:              1200004
+          -1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+          -1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+          -1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 0
+numa_node = 0
+          -1
+numa_node = 1
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 1
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+ colidx: add:      139836739911680 size:             12150060
+ a: add:      139836235350016 size:             24300120
+ w: add:      139836735090688 size:               300016
+ z: add:      139836736303104 size:               300016
+ p: add:      139836736000000 size:               300016
+ r: add:      139836735393792 size:               300016
+ q: add:      139836735696896 size:               300016
+ rowst: size:               600004
+ x size:               300016
+numa_node = 1
+ v size:              1200008
+ aelt size:             24300120
+ acol size:             12150060
+ arow size:             12150060
+ iv size:              1200004
+numa_node = 0
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 0
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+ colidx: add:      140510384144384 size:             12150060
+ a: add:      140509879582720 size:             24300120
+ w: add:      140510379323392 size:               300016
+ z: add:      140510380535808 size:               300016
+ p: add:      140510380232704 size:               300016
+ r: add:      140510379626496 size:               300016
+ q: add:      140510379929600 size:               300016
+ rowst: size:               600004
+ x size:               300016
+ v size:              1200008
+ aelt size:             24300120
+ acol size:             12150060
+ arow size:             12150060
+ iv size:              1200004
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+ colidx: add:      139746892738560 size:             12150060
+ a: add:      139746388176896 size:             24300120
+ w: add:      139746887917568 size:               300016
+ z: add:      139746889129984 size:               300016
+ p: add:      139746888826880 size:               300016
+ r: add:      139746888220672 size:               300016
+ q: add:      139746888523776 size:               300016
+ rowst: size:               600004
+ x size:               300016
+ v size:              1200008
+ aelt size:             24300120
+ acol size:             12150060
+ arow size:             12150060
+ iv size:              1200004
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+          -1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+          -1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 0
+numa_node = 1
+          -1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+ colidx: add:      140142335991808 size:             12150060
+ a: add:      140141831430144 size:             24300120
+ w: add:      140142331170816 size:               300016
+ z: add:      140142332383232 size:               300016
+ p: add:      140142332080128 size:               300016
+ r: add:      140142331473920 size:               300016
+ q: add:      140142331777024 size:               300016
+ rowst: size:               600004
+ x size:               300016
+ v size:              1200008
+ aelt size:             24300120
+ acol size:             12150060
+ arow size:             12150060
+ iv size:              1200004
+numa_node = 1
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+ colidx: add:      140141023789056 size:             12150060
+ a: add:      140140519227392 size:             24300120
+ w: add:      140141018968064 size:               300016
+ z: add:      140141020180480 size:               300016
+ p: add:      140141019877376 size:               300016
+ r: add:      140141019271168 size:               300016
+ q: add:      140141019574272 size:               300016
+ rowst: size:               600004
+ x size:               300016
+ v size:              1200008
+ aelt size:             24300120
+ acol size:             12150060
+ arow size:             12150060
+ iv size:              1200004
+numa_node = 1
+          -1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+ colidx: add:      139974233022464 size:             12150060
+ a: add:      139973728460800 size:             24300120
+ w: add:      139974228201472 size:               300016
+ z: add:      139974229413888 size:               300016
+ p: add:      139974229110784 size:               300016
+ r: add:      139974228504576 size:               300016
+ q: add:      139974228807680 size:               300016
+ rowst: size:               600004
+ x size:               300016
+ v size:              1200008
+ aelt size:             24300120
+ acol size:             12150060
+ arow size:             12150060
+ iv size:              1200004
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+ colidx: add:      140042367574016 size:             12150060
+ a: add:      140041863012352 size:             24300120
+ w: add:      140042362753024 size:               300016
+ z: add:      140042363965440 size:               300016
+ p: add:      140042363662336 size:               300016
+ r: add:      140042363056128 size:               300016
+ q: add:      140042363359232 size:               300016
+ rowst: size:               600004
+ x size:               300016
+ v size:              1200008
+ aelt size:             24300120
+ acol size:             12150060
+ arow size:             12150060
+ iv size:              1200004
+numa_node = 1
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+ colidx: add:      139674729095168 size:             12150060
+ a: add:      139674224533504 size:             24300120
+ w: add:      139674724274176 size:               300016
+ z: add:      139674725486592 size:               300016
+ p: add:      139674725183488 size:               300016
+ r: add:      139674724577280 size:               300016
+ q: add:      139674724880384 size:               300016
+ rowst: size:               600004
+ x size:               300016
+ v size:              1200008
+ aelt size:             24300120
+ acol size:             12150060
+ arow size:             12150060
+ iv size:              1200004
+          -1
+numa_node = 1
+          -1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 0
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+          -1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+ colidx: add:      140078136381440 size:             12150060
+ a: add:      140077631819776 size:             24300120
+ w: add:      140078131560448 size:               300016
+ z: add:      140078132772864 size:               300016
+ p: add:      140078132469760 size:               300016
+ r: add:      140078131863552 size:               300016
+ q: add:      140078132166656 size:               300016
+ rowst: size:               600004
+ x size:               300016
+ v size:              1200008
+ aelt size:             24300120
+ acol size:             12150060
+ arow size:             12150060
+ iv size:              1200004
+numa_node = 1
+numa_node = 1
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+ colidx: add:      140473074876416 size:             12150060
+ a: add:      140472570314752 size:             24300120
+ w: add:      140473070055424 size:               300016
+ z: add:      140473071267840 size:               300016
+ p: add:      140473070964736 size:               300016
+ r: add:      140473070358528 size:               300016
+ q: add:      140473070661632 size:               300016
+ rowst: size:               600004
+ x size:               300016
+ v size:              1200008
+ aelt size:             24300120
+ acol size:             12150060
+ arow size:             12150060
+ iv size:              1200004
+numa_node = 1
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+ colidx: add:      139900870774784 size:             12150060
+ a: add:      139900366213120 size:             24300120
+ w: add:      139900865953792 size:               300016
+ z: add:      139900867166208 size:               300016
+ p: add:      139900866863104 size:               300016
+ r: add:      139900866256896 size:               300016
+ q: add:      139900866560000 size:               300016
+ rowst: size:               600004
+ x size:               300016
+ v size:              1200008
+ aelt size:             24300120
+ acol size:             12150060
+ arow size:             12150060
+ iv size:              1200004
+          -1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+          -1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 0
+numa_node = 1
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+ colidx: add:      139800402472960 size:             12150060
+ a: add:      139799897911296 size:             24300120
+ w: add:      139800397651968 size:               300016
+ z: add:      139800398864384 size:               300016
+ p: add:      139800398561280 size:               300016
+ r: add:      139800397955072 size:               300016
+ q: add:      139800398258176 size:               300016
+ rowst: size:               600004
+ x size:               300016
+ v size:              1200008
+ aelt size:             24300120
+ acol size:             12150060
+ arow size:             12150060
+ iv size:              1200004
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+ colidx: add:      139863973818368 size:             12150060
+ a: add:      139863469256704 size:             24300120
+ w: add:      139863968997376 size:               300016
+ z: add:      139863970209792 size:               300016
+ p: add:      139863969906688 size:               300016
+ r: add:      139863969300480 size:               300016
+ q: add:      139863969603584 size:               300016
+ rowst: size:               600004
+ x size:               300016
+ v size:              1200008
+ aelt size:             24300120
+ acol size:             12150060
+ arow size:             12150060
+ iv size:              1200004
+          -1
+numa_node = 1
+numa_node = 1
+          -1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 0
+numa_node = 1
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 0
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+ colidx: add:      140583093055488 size:             12150060
+ a: add:      140582588493824 size:             24300120
+ w: add:      140583088234496 size:               300016
+ z: add:      140583089446912 size:               300016
+ p: add:      140583089143808 size:               300016
+ r: add:      140583088537600 size:               300016
+ q: add:      140583088840704 size:               300016
+ rowst: size:               600004
+ x size:               300016
+ v size:              1200008
+ aelt size:             24300120
+ acol size:             12150060
+ arow size:             12150060
+ iv size:              1200004
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+numa_node = 1
+ colidx: add:      139918773567488 size:             12150060
+ a: add:      139918269005824 size:             24300120
+ w: add:      139918768746496 size:               300016
+ z: add:      139918769958912 size:               300016
+ p: add:      139918769655808 size:               300016
+ r: add:      139918769049600 size:               300016
+ q: add:      139918769352704 size:               300016
+ rowst: size:               600004
+ x size:               300016
+ v size:              1200008
+ aelt size:             24300120
+ acol size:             12150060
+ arow size:             12150060
+ iv size:              1200004
+
+
+ NAS Parallel Benchmarks 3.3 -- CG Benchmark
+
+ Size:     150000
+ Iterations:    75
+ Number of active processes:    16
+ Number of nonzeroes per row:       15
+ Eigenvalue shift: .110E+03
+
+   iteration           ||r||                 zeta
+        1       0.25684152458809E-12   109.9994423237398
+        2       0.73904271878851E-15    27.3920437146526
+        3       0.73031584712266E-15    28.0339761840275
+        4       0.73565193896639E-15    28.4191507551287
+        5       0.73349711397114E-15    28.6471670038893
+        6       0.73360204398854E-15    28.7812969418412
+        7       0.73366515021104E-15    28.8600458537343
+        8       0.73390040878766E-15    28.9063145572685
+        9       0.73670170986433E-15    28.9335649214622
+       10       0.73571071517574E-15    28.9496695449003
+       11       0.73648526442789E-15    28.9592263353755
+       12       0.73847208067229E-15    28.9649233484889
+       13       0.73405007716800E-15    28.9683359248936
+       14       0.73296555546106E-15    28.9703903960005
+       15       0.73033004640843E-15    28.9716336228371
+       16       0.73643024376707E-15    28.9723898600853
+       17       0.73361604597501E-15    28.9728522692229
+       18       0.73459221640257E-15    28.9731364797778
+       19       0.73587226514251E-15    28.9733120569287
+       20       0.73080537355320E-15    28.9734210663747
+       21       0.73403975619047E-15    28.9734890760554
+       22       0.73635096642455E-15    28.9735317064871
+       23       0.73521677593124E-15    28.9735585497258
+       24       0.73388492060584E-15    28.9735755256648
+       25       0.73114465989435E-15    28.9735863059382
+       26       0.72929964592206E-15    28.9735931787374
+       27       0.72814591157688E-15    28.9735975767371
+       28       0.73460352772814E-15    28.9736004009989
+       29       0.73271188433475E-15    28.9736022206771
+       30       0.73315053133034E-15    28.9736033967627
+       31       0.73083321601352E-15    28.9736041591157
+       32       0.73158546822823E-15    28.9736046546405
+       33       0.73148984069934E-15    28.9736049775614
+       34       0.72807801168839E-15    28.9736051885099
+       35       0.72896232937332E-15    28.9736053266246
+       36       0.72891084612344E-15    28.9736054172454
+       37       0.73016385169892E-15    28.9736054768226
+       38       0.73138507323994E-15    28.9736055160638
+       39       0.72703215994026E-15    28.9736055419574
+       40       0.72921046240435E-15    28.9736055590700
+       41       0.72899824318846E-15    28.9736055703976
+       42       0.72698896731495E-15    28.9736055779073
+       43       0.73020781285315E-15    28.9736055828934
+       44       0.72909981170735E-15    28.9736055862072
+       45       0.73199816886206E-15    28.9736055884132
+       46       0.72597725666719E-15    28.9736055898824
+       47       0.72606160037997E-15    28.9736055908630
+       48       0.72965411019657E-15    28.9736055915179
+       49       0.72835841342896E-15    28.9736055919554
+       50       0.72508406402431E-15    28.9736055922485
+       51       0.73170000686206E-15    28.9736055924449
+       52       0.72622417388123E-15    28.9736055925761
+       53       0.72757680055017E-15    28.9736055926646
+       54       0.72917191017288E-15    28.9736055927236
+       55       0.72793759015979E-15    28.9736055927632
+       56       0.72425801793153E-15    28.9736055927904
+       57       0.72610764785750E-15    28.9736055928077
+       58       0.72614933126561E-15    28.9736055928208
+       59       0.72509034658993E-15    28.9736055928281
+       60       0.72308226746960E-15    28.9736055928339
+       61       0.72368508145046E-15    28.9736055928376
+       62       0.72546545050030E-15    28.9736055928397
+       63       0.72844701695366E-15    28.9736055928419
+       64       0.72359005314445E-15    28.9736055928432
+       65       0.72558602502673E-15    28.9736055928440
+       66       0.72484160487195E-15    28.9736055928439
+       67       0.72808226996462E-15    28.9736055928450
+       68       0.72662520677211E-15    28.9736055928445
+       69       0.72403102458641E-15    28.9736055928450
+       70       0.72378150618886E-15    28.9736055928455
+       71       0.72578893473459E-15    28.9736055928456
+       72       0.72289215929556E-15    28.9736055928456
+       73       0.72654040771579E-15    28.9736055928458
+       74       0.72401061283166E-15    28.9736055928451
+memcpy: 9 0.000000
+clflush: 9 0.000000
+data_cache: 9 2.023496
+memmove: 9 0.000000
+
+
+write: 9 196.680838
+msync: 9 0.008555
+memcpy: 8 0.000000
+clflush: 8 0.000000
+data_cache: 8 2.017736
+memmove: 8 0.000000
+
+
+write: 8 190.002463
+msync: 8 0.008775
+memcpy: 10 0.000000
+clflush: 10 0.000000
+data_cache: 10 2.017303
+memmove: 10 0.000000
+
+
+write: 10 191.798060
+msync: 10 0.008567
+memcpy: 11 0.000000
+clflush: 11 0.000000
+data_cache: 11 2.025283
+memmove: 11 0.000000
+
+
+write: 11 199.924621
+msync: 11 0.008541
+memcpy: 3 0.000000
+clflush: 3 0.000000
+data_cache: 3 1.622335
+memmove: 3 0.000000
+
+
+write: 3 201.924528
+msync: 3 0.007525
+memcpy: 1 0.000000
+clflush: 1 0.000000
+data_cache: 1 1.619859
+memmove: 1 0.000000
+
+
+write: 1 191.526382
+msync: 1 0.007431
+       75       0.72186248070828E-15    28.9736055928458
+memcpy: 0 0.000000
+clflush: 0 0.000000
+data_cache: 0 1.620671
+memmove: 0 0.000000
+
+
+write: 0 193.437254
+msync: 0 0.007264
+memcpy: 2 0.000000
+clflush: 2 0.000000
+data_cache: 2 1.623841
+memmove: 2 0.000000
+
+
+write: 2 194.550236
+msync: 2 0.007438
+memcpy: 13 0.000000
+clflush: 13 0.000000
+data_cache: 13 1.561478
+memmove: 13 0.000000
+
+
+write: 13 192.582020
+msync: 13 0.008605
+memcpy: 12 0.000000
+clflush: 12 0.000000
+data_cache: 12 1.563766
+memmove: 12 0.000000
+
+
+write: 12 199.369295
+msync: 12 0.008419
+memcpy: 15 0.000000
+clflush: 15 0.000000
+data_cache: 15 1.562641
+memmove: 15 0.000000
+
+
+write: 15 197.486961
+msync: 15 0.008843
+memcpy: 14 0.000000
+clflush: 14 0.000000
+data_cache: 14 1.561368
+memmove: 14 0.000000
+
+
+write: 14 194.878941
+msync: 14 0.008968
+memcpy: 5 0.000000
+clflush: 5 0.000000
+data_cache: 5 2.001765
+memmove: 5 0.000000
+
+
+write: 5 201.764334
+msync: 5 0.008117
+memcpy: 7 0.000000
+clflush: 7 0.000000
+data_cache: 7 2.006845
+memmove: 7 0.000000
+
+
+write: 7 194.495150
+msync: 7 0.008193
+memcpy: 6 0.000000
+clflush: 6 0.000000
+data_cache: 6 2.003885
+memmove: 6 0.000000
+
+
+write: 6 191.794105
+msync: 6 0.007808
+memcpy: 4 0.000000
+clflush: 4 0.000000
+data_cache: 4 2.002897
+memmove: 4 0.000000
+
+
+write: 4 197.174871
+msync: 4 0.008133
+ Benchmark completed 
+ VERIFICATION SUCCESSFUL 
+ Zeta is     0.2897360559285E+02
+ Error is    0.2857022004072E-13
+
+
+ CG Benchmark Completed.
+ Class           =                        C
+ Size            =                   150000
+ Iterations      =                       75
+ Time in seconds =                  2358.25
+ Total processes =                       16
+ Compiled procs  =                       16
+ Mop/s total     =                    60.79
+ Mop/s/process   =                     3.80
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                    3.3.1
+ Compile date    =              19 Mar 2017
+
+ Compile options:
+    MPIF77       = mpif77
+    FLINK        = $(MPIF77)
+    FMPI_LIB     = -L/opt/pasa_lib/openmpi-1.10.0/lib -lmpi
+    FMPI_INC     = -I/opt/pasa_lib/openmpi-1.10.0/include   -m...
+    FFLAGS       = -O  -fcray-pointer -mcmodel=large  -fno-ran...
+    FLINKFLAGS   = -O 
+    RAND         = randi8
+
+
+ Please send feedbacks and/or the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+
+

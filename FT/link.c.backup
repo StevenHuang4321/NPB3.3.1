@@ -1,0 +1,116 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#include <sys/types.h>
+#include <sys/syscall.h>
+#include <numa.h>
+#include <numaif.h>
+#include <pthread.h>
+//#include "numap_link.h"                                                                                                                         
+#include "numap/numap.h"
+
+#define DRAM_SIZE 250  //MB                                                                                                                       
+#define MAX_PHASE_NUM 20
+#define MAX_OBJ_NUM 10
+//#define MAX_HW_EVENT 2                                                                                                                          
+#define BW_NVM 8224  //MB/S                                                                                                                       
+#define BW_DRAM 13203 //MB/S                                                                                                                      
+#define cache_line_size 64*1.25e-7    // 64B  * 10e-6                                                                                             
+#define num_process 1
+#define LOOKAHEAD_WIN -1   //-1 means the whole loop                                                                                              
+#define MODEL_FREQ  100  //2                                                                                                                      
+#define  sampling_rate 2000 // 65000                                                                                                              
+#define num_ele 7
+
+
+
+//sampling variables                                                                                                                              
+struct numap_sampling_measure sm;
+int res;  //error variables                                                                                                                       
+
+//phase and iteration count                                                                                                                       
+int phase_counter = 0;
+int iter_num = 0;
+int sampling_check = 0;
+int phase_total = 0;
+
+int curr_dram_used = 0;
+//int c[num_ele + 1][DRAM_SIZE +1];   //Max benefit value                                                                                         
+
+long double dp[num_ele + 1][DRAM_SIZE + 1];
+long double cache = cache_line_size * sampling_rate;
+unsigned long long overlap_time;
+unsigned long long overlap_time_max;
+long double overlap_;
+long double benefit_local;
+long double benefit_global;
+
+int placement_method;   //data placement method   -1 global_view   1 local_view                                                                   
+//helper thread                                                                                                                                   
+pthread_t tid;
+pthread_attr_t attr;
+
+
+typedef struct PHASE_INFO{
+  unsigned long long exe_time;
+  //  hw_events events_counter[num_ele];                                                                                                          
+  obj_info objs_book_local[num_ele];
+  //  data_movement_task move_tasks;                                                                                                              
+  //int phase_type;  //COMP=0; COMM=1                                                                                                             
+} phase_info;
+
+phase_info phase_record[MAX_PHASE_NUM];
+//obj_addr addr_book[num_ele];                                                                                                                    
+obj_info objs_book_global[num_ele];
+
+typedef struct MOVE_INFO{
+  void *ptr;
+  int size;
+} move_info;
+
+//function list                                                                                                                                   
+static __inline__ unsigned long long rdtsc(void) {
+  unsigned hi, lo;
+  __asm__ __volatile__ ("rdtsc" : "=a"(lo), "=d"(hi));
+  return ( (unsigned long long)lo)|( ((unsigned long long)hi)<<32 );
+}
+
+// compartor of qsort                                                                                                                             
+
+int comparator (const void * a, const void * b) {
+
+  unsigned long long tmp_a = ((obj_info*)a) -> benefit;
+  unsigned long long tmp_b = ((obj_info*)b) -> benefit;
+
+  return (tmp_b - tmp_a);
+
+}
+
+
+
+
+void unimem_malloc_(void** data, int *size, int* pos){
+    if (*pos == 1) {
+      printf("DRAM\n");
+      //allocate on DRAM                                                                                                                         
+      numa_set_preferred(0);
+      //  numa_run_on_node(0);                                                                                                                   
+      //    *data =(void *) malloc(*size);                                                                                                       
+      *data = (void *)numa_alloc_onnode(*size, 0);
+      memset(*data, 'c', *size);
+      //      find_memory_node_for_addr(*data);                                                                                                  
+
+    } else if (*pos == -1){
+      printf("NVM\n");
+      // allocate on NVM                                                                                                                         
+      numa_set_preferred(1);
+      //    numa_run_on_node(1);                                                                                                                  
+      //    *data =(void *)pmalloc(*size);                                                                                                        
+      *data = (void *)numa_alloc_onnode(*size, 1);
+      memset(*data, 'c', *size);
+      //      find_memory_node_for_addr(*data);                                                                                                  
+    }
+
+}

@@ -1,0 +1,6 @@
+#!/bin/bash
+mpirun -np 16 -host n03,n05,n06,n07 ./bin/ft.C.16_baseline | tee finalresult/ft_c_16_1_8bw_baseline.log
+mpirun -np 16 -host n03,n05,n06,n07 ./bin/ft.C.16_memcpy | tee finalresult/ft_c_16_1_8bw_memcpy.log
+mpirun -np 16 -host n03,n05,n06,n07 ./bin/ft.C.16_sse2 | tee finalresult/ft_c_16_1_8bw_sse2.log
+mpirun -np 16 -host n03,n05,n06,n07 ./bin/ft.C.16_memcpy_openmp | tee finalresult/ft_c_16_1_8bw_memcpy_openmp.log
+mpirun -np 16 -host n03,n05,n06,n07 ./bin/ft.C.16_sse2_openmp | tee finalresult/ft_c_16_1_8bw_sse2_openmp.log
