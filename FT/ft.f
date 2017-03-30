@@ -101,11 +101,24 @@ c---------------------------------------------------------------------
 
       double complex   u0(ntdivnp), 
      >                 u1(ntdivnp), 
-     >                 u2(ntdivnp)
+     >                 u2(ntdivnp),
+     >                 u0_n(ntdivnp), 
+     >                 u0_o(ntdivnp),
+     >                 u1_n(ntdivnp), 
+     >                 u1_o(ntdivnp), 
+     >                 u2_n(ntdivnp),
+     >                 u2_o(ntdivnp)
+
       double precision twiddle(ntdivnp)
        pointer(ptr_u0, u0)
        pointer(ptr_u1, u1)
        pointer(ptr_u2, u2)
+       pointer(ptr_u0_n, u0_o)
+       pointer(ptr_u1_n, u1_o)
+       pointer(ptr_u2_n, u2_o)
+       pointer(ptr_u0_o, u0_n)
+       pointer(ptr_u1_o, u1_n)
+       pointer(ptr_u2_o, u2_n)
        pointer(ptr_twiddle, twiddle)
 
 c---------------------------------------------------------------------
@@ -122,7 +135,10 @@ c---------------------------------------------------------------------
 
       common /bigarrays/ ptr_u0, ptr_pad1, ptr_u1, 
      >             ptr_ pad2, ptr_u2, ptr_pad3, 
-     >             ptr_twiddle
+     >             ptr_twiddle, 
+     >             ptr_u0_n, ptr_u1_n, ptr_u2_n,
+     >             ptr_u0_o, ptr_u1_o, ptr_u2_o
+     >
 
       integer iter
       double precision total_time, mflops
@@ -235,13 +251,21 @@ c      call unimem_malloc(ptr_sums, sizeof(sums), data_pos)
       call unimem_malloc(ptr_i, sizeof(i), data_pos)
       call unimem_malloc(ptr_ierr, sizeof(ierr), data_pos)
       
-      call unimem_malloc(ptr_u0, sizeof(u0), data_pos)
+      call unimem_malloc(ptr_u0, sizeof(u0), 1)
+      call unimem_malloc(ptr_u0_n, sizeof(u0), 1)
+      call unimem_malloc(ptr_u0_o, sizeof(u0), 1)
+
 c      call unimem_malloc(ptr_u0, sizeof(u0), 1)
 
-      call unimem_malloc(ptr_u1, sizeof(u1), data_pos)
+      call unimem_malloc(ptr_u1, sizeof(u1), 1)
+      call unimem_malloc(ptr_u1_n, sizeof(u1), 1)
+      call unimem_malloc(ptr_u1_o, sizeof(u1), 1)
 c      call unimem_malloc(ptr_u1, sizeof(u1), 1)
 
-      call unimem_malloc(ptr_u2, sizeof(u2), data_pos)
+      call unimem_malloc(ptr_u2, sizeof(u2), 1)
+      call unimem_malloc(ptr_u2_n, sizeof(u2), 1)
+      call unimem_malloc(ptr_u2_o, sizeof(u2), 1)
+
 c      call unimem_malloc(ptr_u2, sizeof(u2), 1)
 c      call unimem_malloc(ptr_twiddle, sizeof(twiddle), data_pos)
       call unimem_malloc(ptr_twiddle, sizeof(twiddle), 1)
@@ -301,7 +325,7 @@ c---------------------------------------------------------------------
       if (timers_enabled) call timer_start(T_setup)
 
       call compute_indexmap(twiddle, dims(1,3), dims(2,3), dims(3,3))
-      call compute_initial_conditions(u1, dims(1,1), dims(2,1), 
+      call compute_initial_conditions(u1_n, dims(1,1), dims(2,1), 
      >                                dims(3,1))
       call fft_init (dims(1,1))
 
@@ -309,16 +333,20 @@ c---------------------------------------------------------------------
       if (timers_enabled) call timer_stop(T_setup)
 
       if (timers_enabled) call timer_start(T_fft)
-      call fft(1, u1, u0)
+      call fft(1, u1_n, u0_n)
       if (timers_enabled) call timer_stop(T_fft)
 
       do iter = 1, niter
-c      do iter = 1, 5
+        call c_switch(ptr_u0_n,ptr_u0_o) 
+        call c_switch(ptr_u1_n,ptr_u1_o) 
+        call c_switch(ptr_u2_n,ptr_u2_o) 
+
          if (timers_enabled) call timer_start(T_evolve)
-         call evolve(u0, u1, twiddle, dims(1,1), dims(2,1), dims(3,1))
+         call evolve(u0_n, u0_o, u1_n, 
+     >     twiddle, dims(1,1), dims(2,1), dims(3,1))
          if (timers_enabled) call timer_stop(T_evolve)
          if (timers_enabled) call timer_start(T_fft)
-         call fft(-1, u1, u2)
+         call fft(-1, u1_n, u2_n)
 
 c---------------kai---------------------
 c           call c_dram_cache_cp(curr_rank)                                                                                                       
@@ -347,17 +375,17 @@ c     >         curr_rank, 2)
 c          call c_memwrite(ptr_u2_copy, sizeof(mflops), sizeof(u2_copy),
 c     >         curr_rank, 2) 
 
-          call c_memwrite(ptr_u0_copy, sizeof(mflops), sizeof(u0_copy),
-     >        curr_rank, 3)                                                                                                                      
-          call c_memwrite(ptr_u1_copy, sizeof(mflops), sizeof(u1_copy),
-     >         curr_rank, 3)                                                                                                                     
-          call c_memwrite(ptr_u2_copy, sizeof(mflops), sizeof(u2_copy),
-     >         curr_rank, 3)   
+c          call c_memwrite(ptr_u0_copy, sizeof(mflops), sizeof(u0_copy),
+c     >        curr_rank, 3)                                                                                                                      
+c          call c_memwrite(ptr_u1_copy, sizeof(mflops), sizeof(u1_copy),
+c     >         curr_rank, 3)                                                                                                                     
+c          call c_memwrite(ptr_u2_copy, sizeof(mflops), sizeof(u2_copy),
+c     >         curr_rank, 3)   
 c---------------------------------------
          if (timers_enabled) call timer_stop(T_fft)
 !         if (timers_enabled) call synchup()
          if (timers_enabled) call timer_start(T_checksum)
-         call checksum(iter, u2, dims(1,1), dims(2,1), dims(3,1))
+         call checksum(iter, u2_n, dims(1,1), dims(2,1), dims(3,1))
          if (timers_enabled) call timer_stop(T_checksum)
       end do
 
@@ -389,7 +417,7 @@ c-------------------------------------------------
 c---------------------------------------------------------------------
 c---------------------------------------------------------------------
 
-      subroutine evolve(u0, u1, twiddle, d1, d2, d3)
+      subroutine evolve(u0n,u0o, u1, twiddle, d1, d2, d3)
 
 c---------------------------------------------------------------------
 c---------------------------------------------------------------------
@@ -402,7 +430,8 @@ c---------------------------------------------------------------------
       include 'global.h'
       integer d1, d2, d3
       double precision exi
-      double complex u0(d1,d2,d3)
+      double complex u0n(d1,d2,d3)
+      double complex u0o(d1,d2,d3)
       double complex u1(d1,d2,d3)
       double precision twiddle(d1,d2,d3)
       integer i, j, k
@@ -410,8 +439,8 @@ c---------------------------------------------------------------------
       do k = 1, d3
          do j = 1, d2
             do i = 1, d1
-               u0(i,j,k) = u0(i,j,k)*(twiddle(i,j,k))
-               u1(i,j,k) = u0(i,j,k)
+               u0n(i,j,k) = u0o(i,j,k)*(twiddle(i,j,k))
+               u1(i,j,k) = u0n(i,j,k)
             end do
          end do
       end do
