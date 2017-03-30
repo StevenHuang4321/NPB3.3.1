@@ -426,7 +426,7 @@ c
 
        call set_constants
 
-       call initialize(u_n)
+       call initialize(u_o)
 
        call lhsinit
 
