@@ -10,13 +10,13 @@ c---------------------------------------------------------------------
 c---------------------------------------------------------------------
 c addition of update to the vector u
 c---------------------------------------------------------------------
-      include 'header.h'
+
+
+       include 'header.h'
       double precision
      >un       (5,  -2:IMAX+1,-2:JMAX+1,-2:KMAX+1, maxcells),
      >uo       (5,  -2:IMAX+1,-2:JMAX+1,-2:KMAX+1, maxcells)
-
-       include 'header.h'
-
+     
        integer  c, i, j, k, m
 
        do  c = 1, ncells
