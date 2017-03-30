@@ -14,9 +14,9 @@ c---------------------------------------------------------------------
 
        include 'header.h'
       double precision
-     >un       (5,  -2:IMAX+1,-2:JMAX+1,-2:KMAX+1, maxcells),
-     >uo       (5,  -2:IMAX+1,-2:JMAX+1,-2:KMAX+1, maxcells)
-     
+     >un       (-2:IMAXP+1,-2:JMAXP+1,-2:KMAX+1, 5,maxcells),
+     >uo       (-2:IMAXP+1,-2:JMAXP+1,-2:KMAX+1, 5,maxcells),
+
        integer  c, i, j, k, m
 
        do  c = 1, ncells
