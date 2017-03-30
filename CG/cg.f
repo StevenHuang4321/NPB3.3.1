@@ -208,7 +208,13 @@ c     >                         w
      >                         p(na/num_proc_rows+2),
      >                         q(na/num_proc_rows+2),
      >                         r(na/num_proc_rows+2),
-     >                         w(na/num_proc_rows+2)
+     >                         w(na/num_proc_rows+2),
+     >                         p_o(na/num_proc_rows+2),
+     >                         p_e(na/num_proc_rows+2),
+     >                         r_o(na/num_proc_rows+2),
+     >                         r_e(na/num_proc_rows+2),
+     >                         z_o(na/num_proc_rows+2),
+     >                         z_e(na/num_proc_rows+2),
 
       pointer (ptr_v, v)
       pointer (ptr_aelt, aelt)
@@ -219,6 +225,13 @@ c     >                         w
       pointer (ptr_q, q)
       pointer (ptr_r, r)
       pointer (ptr_w, w)
+
+      pointer (ptr_p_n, p_e)
+      pointer (ptr_p_o, p_o)
+      pointer (ptr_r_n, p_e)
+      pointer (ptr_r_o, p_o)
+      pointer (ptr_z_n, p_e)
+      pointer (ptr_z_o, p_o)
 
 c      common /urando/          amult, tran
       double precision         amult, tran
@@ -388,16 +401,23 @@ c      print *, "a:", sizeof(a)
       call unimem_malloc(ptr_x, sizeof(x), 1)
 c      call unimem_malloc(ptr_x, sizeof(x), data_pos)      
       call unimem_malloc(ptr_z, sizeof(z), 1)
+      call unimem_malloc(ptr_z_n, sizeof(z), 1)
+       call unimem_malloc(ptr_z_o, sizeof(z), 1)
 c      call unimem_malloc(ptr_z, sizeof(z), data_pos)
 c      print *, "z:", sizeof(z)
       call unimem_malloc(ptr_p, sizeof(p), 1)
+      call unimem_malloc(ptr_p_n, sizeof(p), 1)
+      call unimem_malloc(ptr_p_o, sizeof(p), 1)
 c      call unimem_malloc(ptr_p, sizeof(p), data_pos)
 c      print *, "p:", sizeof(p)
 c      call unimem_malloc(ptr_q, sizeof(q), 1)
       call unimem_malloc(ptr_q, sizeof(q), data_pos)
 c      print *, "q:", sizeof(q)
 c      call unimem_malloc(ptr_r, sizeof(r), 1)
-      call unimem_malloc(ptr_r, sizeof(r), data_pos)
+      call unimem_malloc(ptr_r, sizeof(r), 1)
+      call unimem_malloc(ptr_r_n, sizeof(r), 1)
+      call unimem_malloc(ptr_r_o, sizeof(r), 1)
+
 c      print *, "r:", sizeof(r)
 c      call unimem_malloc(ptr_w, sizeof(w), 1)
       call unimem_malloc(ptr_w, sizeof(w), data_pos)
@@ -642,7 +662,9 @@ c---------------------------------------------------------------------
 c---------------------------------------------------------------------
 c  The call to the conjugate gradient routine:
 c---------------------------------------------------------------------
-         call conj_grad ( ptr_colidx,
+         call conj_grad ( 
+     >  ptr_p_n,ptr_p_o, ptr_r_n,ptr_r_o,ptr_z_n,ptr_z_o,   
+     >                    ptr_colidx,
      >                    rowstr,
      >                    ptr_x,
      >                    ptr_z,
@@ -763,7 +785,9 @@ c      do it = 1, 10
 c---------------------------------------------------------------------
 c  The call to the conjugate gradient routine:
 c---------------------------------------------------------------------
-         call conj_grad ( ptr_colidx,
+         call conj_grad ( 
+     >     ptr_p_n,ptr_p_o, ptr_r_n,ptr_r_o,ptr_z_n,ptr_z_o,
+     >                    ptr_colidx,
      >                    rowstr,
      >                    ptr_x,
      >                    ptr_z,
@@ -1356,7 +1380,9 @@ c---------------------------------------------------------------------
 
 c---------------------------------------------------------------------
 c---------------------------------------------------------------------
-      subroutine conj_grad ( ptr_colidx,
+      subroutine conj_grad (
+     > ptr_p_n,ptr_p_o, ptr_r_n,ptr_r_o,ptr_z_n,ptr_z_o,      
+     >                       ptr_colidx,
      >                       rowstr,
      >                       ptr_x,
      >                       ptr_z,
@@ -1432,13 +1458,20 @@ c     >                         send_len
 
 
       double precision   x(*),
-     >                   z(*),
+     >                   p(*),
+     >                   r(*),
+     >                   z(*), 
      >                   a(nzz)
       integer            colidx(nzz), rowstr(naa+1)
 
-      double precision   p(*),
+      double precision   
+     >                   p_o(*),
+     >                   p_e(*),
+     >                   r_o(*),
+     >                   r_e(*),
+     >                   z_o(*),
+     >                   z_e(*),
      >                   q(*),
-     >                   r(*),               
      >                   w(*)                ! used as work temporary
       
       double precision   p_copy(*),
@@ -1451,14 +1484,18 @@ c     >                         send_len
 c----------------------------------------------------------------
       pointer (ptr_a, a)
       pointer (ptr_colidx, colidx)
-      pointer (ptr_p, p)
       pointer (ptr_q, q)
-      pointer (ptr_z, z)
-      pointer (ptr_r, r)
 c      pointer (ptr_k, k)
       pointer (ptr_x, x)
       pointer (ptr_w, w)
-      
+
+      pointer (ptr_p_n, p_e)
+      pointer (ptr_p_o, p_o)
+      pointer (ptr_r_n, r_e)      
+      pointer (ptr_r_o, r_o)
+      pointer (ptr_z_n, z_e)
+      pointer (ptr_z_o, z_o)  
+
       pointer (ptr_p_copy, p_copy)
       pointer (ptr_x_copy, x_copy)
       pointer (ptr_z_copy, z_copy)
@@ -1504,9 +1541,9 @@ c  Initialize the CG algorithm:
 c---------------------------------------------------------------------
       do j=1,naa/nprows+1
          q(j) = 0.0d0
-         z(j) = 0.0d0
-         r(j) = x(j)
-         p(j) = r(j)
+         z_e(j) = 0.0d0
+         r_e(j) = x(j)
+         p_e(j) = r_e(j)
          w(j) = 0.0d0                 
       enddo
 
@@ -1517,7 +1554,7 @@ c  Now, obtain the norm of r: First, sum squares of r elements locally...
 c---------------------------------------------------------------------
       sum = 0.0d0
       do j=1, lastcol-firstcol+1
-         sum = sum + r(j)*r(j)
+         sum = sum + r_e(j)*r_e(j)
       enddo
 
 c---------------------------------------------------------------------
@@ -1564,12 +1601,14 @@ c---------------------------------------------------------------------
 c  q = A.p
 c  The partition submatrix-vector multiply: use workspace w
 c---------------------------------------------------------------------
-        
+         call c_switch(ptr_p_n,ptr_p_o)
+         call c_switch(ptr_r_n,ptr_r_o)
+         call c_switch(ptr_z_n,ptr_z_o)
 
          do j=1,lastrow-firstrow+1
             sum = 0.d0
             do k=rowstr(j),rowstr(j+1)-1
-               sum = sum + a(k)*p(colidx(k))
+               sum = sum + a(k)*p_e(colidx(k))
             enddo
             w(j) = sum
          enddo
@@ -1672,7 +1711,7 @@ c  Obtain p.q
 c---------------------------------------------------------------------
          sum = 0.0d0
          do j=1, lastcol-firstcol+1
-            sum = sum + p(j)*q(j)
+            sum = sum + p_e(j)*q(j)
          enddo
 
       
@@ -1734,8 +1773,8 @@ c  Obtain z = z + alpha*p
 c  and    r = r - alpha*q
 c---------------------------------------------------------------------
          do j=1, lastcol-firstcol+1
-            z(j) = z(j) + alpha*p(j)
-            r(j) = r(j) - alpha*q(j)
+            z_o(j) = z_e(j) + alpha*p_e(j)
+            r_o(j) = r_e(j) - alpha*q(j)
          enddo
             
 c---------------------------------------------------------------------
@@ -1744,7 +1783,7 @@ c  Now, obtain the norm of r: First, sum squares of r elements locally...
 c---------------------------------------------------------------------
          sum = 0.0d0
          do j=1, lastcol-firstcol+1
-            sum = sum + r(j)*r(j)
+            sum = sum + r_o(j)*r_o(j)
          enddo
          
 c         CALL end_one_phase
@@ -1798,15 +1837,15 @@ c---------------------------------------------------------------------
 c  p = r + beta*p
 c---------------------------------------------------------------------
          do j=1, lastcol-firstcol+1
-            p(j) = r(j) + beta*p(j)
+            p_o(j) = r_o(j) + beta*p_e(j)
          enddo
          
 c         CALL end_one_phase
 c--------------kai------------------------
-         if (main_loop .eq. 1) then
-          call c_dram_cache_cp(ptr_p_copy, ptr_p, copy_size)
-          call c_dram_cache_cp(ptr_z_copy, ptr_z, copy_size)
-          call c_dram_cache_cp(ptr_x_copy, ptr_x, copy_size)
+c         if (main_loop .eq. 1) then
+c          call c_dram_cache_cp(ptr_p_copy, ptr_p, copy_size)
+c          call c_dram_cache_cp(ptr_z_copy, ptr_z, copy_size)
+c          call c_dram_cache_cp(ptr_x_copy, ptr_x, copy_size)
 c          call c_dram_cache_move(ptr_p_copy, ptr_p, copy_size)
 c          call c_dram_cache_move(ptr_z_copy, ptr_p, copy_size)
 c          call c_dram_cache_move(ptr_x_copy, ptr_p, copy_size)
@@ -1835,17 +1874,23 @@ c     >         curr_rank, 2)
 c          call c_memwrite(ptr_x_copy, sizeof(sum), copy_size, 
 c     >         curr_rank, 2)                                                                             
   
-          call c_memwrite(ptr_p_copy, sizeof(sum), copy_size, 
-     >         curr_rank, 3)                                                                               
-          call c_memwrite(ptr_z_copy, sizeof(sum), copy_size, 
-     >         curr_rank, 3)                                                                               
-          call c_memwrite(ptr_x_copy, sizeof(sum), copy_size, 
-     >         curr_rank, 3)
-          end if
+c          call c_memwrite(ptr_p_copy, sizeof(sum), copy_size, 
+c     >         curr_rank, 3)                                                                               
+c          call c_memwrite(ptr_z_copy, sizeof(sum), copy_size, 
+c     >         curr_rank, 3)                                                                               
+c          call c_memwrite(ptr_x_copy, sizeof(sum), copy_size, 
+c     >         curr_rank, 3)
+c          end if
 c----------------------------------------
       enddo                             ! end of do cgit=1,cgitmax
 C      print *, "444444444ptr_a: ", ptr_a
 
+c--ychuang
+      do j=1,naa/nprows+1
+         p(j) = p_o(j)
+         r(j) = r_o(j)
+         z(j) = z_o(j)                
+      enddo
 
 c---------------------------------------------------------------------
 c  Compute residual norm explicitly:  ||r|| = ||x - A.z||
