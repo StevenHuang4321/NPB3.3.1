@@ -214,7 +214,7 @@ c     >                         w
      >                         r_o(na/num_proc_rows+2),
      >                         r_e(na/num_proc_rows+2),
      >                         z_o(na/num_proc_rows+2),
-     >                         z_e(na/num_proc_rows+2),
+     >                         z_e(na/num_proc_rows+2)
 
       pointer (ptr_v, v)
       pointer (ptr_aelt, aelt)
@@ -228,10 +228,10 @@ c     >                         w
 
       pointer (ptr_p_n, p_e)
       pointer (ptr_p_o, p_o)
-      pointer (ptr_r_n, p_e)
-      pointer (ptr_r_o, p_o)
-      pointer (ptr_z_n, p_e)
-      pointer (ptr_z_o, p_o)
+      pointer (ptr_r_n, r_e)
+      pointer (ptr_r_o, r_o)
+      pointer (ptr_z_n, z_e)
+      pointer (ptr_z_o, z_o)
 
 c      common /urando/          amult, tran
       double precision         amult, tran
