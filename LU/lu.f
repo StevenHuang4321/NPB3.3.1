@@ -150,6 +150,8 @@ c      call c_openmp_init(4)
 
 c      call unimem_malloc(ptr_u, sizeof(u), data_pos)
       call unimem_malloc(ptr_u, sizeof(u), 1)
+      call unimem_malloc(ptr_u_n, sizeof(u), 1)
+      call unimem_malloc(ptr_u_o, sizeof(u), 1)
 
 c      call unimem_malloc(ptr_rsd, sizeof(rsd), data_pos)
       call unimem_malloc(ptr_rsd, sizeof(rsd), 1)
@@ -260,44 +262,44 @@ c---------------------------------------------------------------------
 c---------------------------------------------------------------------
 c   set the boundary values for dependent variables
 c---------------------------------------------------------------------
-      call setbv()
+      call setbv(u_n)
 
 c---------------------------------------------------------------------
 c   set the initial values for dependent variables
 c---------------------------------------------------------------------
-      call setiv()
+      call setiv(u_n)
 
 c---------------------------------------------------------------------
 c   compute the forcing term based on prescribed exact solution
 c---------------------------------------------------------------------
-      call erhs()
+      call erhs(u_n)
 
 c---------------------------------------------------------------------
 c   perform one SSOR iteration to touch all data and program pages 
 c---------------------------------------------------------------------
-      call ssor(1)
+      call ssor(1,ptr_u_n,ptr_u_o)
 
 c---------------------------------------------------------------------
 c   reset the boundary and initial values
 c---------------------------------------------------------------------
-      call setbv()
-      call setiv()
+      call setbv(u_n)
+      call setiv(u_n)
 
 c---------------------------------------------------------------------
 c   perform the SSOR iterations
 c---------------------------------------------------------------------
-      call ssor(itmax)
+      call ssor(itmax,ptr_u_n,ptr_u_o)
 c      call ssor(25)
 c      call ssor(30)
 c---------------------------------------------------------------------
 c   compute the solution error
 c---------------------------------------------------------------------
-      call error()
+      call error(u_n)
 
 c---------------------------------------------------------------------
 c   compute the surface integral
 c---------------------------------------------------------------------
-      call pintgr()
+      call pintgr(u_n)
 
 
 c---------kai----------

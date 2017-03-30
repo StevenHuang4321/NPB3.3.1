@@ -1,7 +1,7 @@
 c---------------------------------------------------------------------
 c---------------------------------------------------------------------
 
-      subroutine ssor(niter)
+      subroutine ssor(niter,ptr_u_n,ptr_u_o)
 
 c---------------------------------------------------------------------
 c---------------------------------------------------------------------
@@ -60,7 +60,7 @@ c---------------------------------------------------------------------
 c---------------------------------------------------------------------
 c   compute the steady-state residuals
 c---------------------------------------------------------------------
-      call rhs
+      call rhs(u_n)
  
 c---------------------------------------------------------------------
 c   compute the L2 norms of newton iteration residuals
@@ -82,7 +82,7 @@ c---------------------------------------------------------------------
 c   the timestep loop
 c---------------------------------------------------------------------
       do istep = 1, niter
-
+        call c_switch(ptr_u_n,ptr_u_o)
          if (id .eq. 0) then
             if (mod ( istep, 20) .eq. 0 .or.
      >            istep .eq. itmax .or.
@@ -109,7 +109,7 @@ c---------------------------------------------------------------------
 c---------------------------------------------------------------------
 c   form the lower triangular part of the jacobian matrix
 c---------------------------------------------------------------------
-            call jacld(k)
+            call jacld(k,u_o)
  
 c---------------------------------------------------------------------
 c   perform the lower triangular solution
@@ -127,7 +127,7 @@ c---------------------------------------------------------------------
 c---------------------------------------------------------------------
 c   form the strictly upper triangular part of the jacobian matrix
 c---------------------------------------------------------------------
-            call jacu(k)
+            call jacu(k,u_o)
 
 c---------------------------------------------------------------------
 c   perform the upper triangular solution
@@ -149,7 +149,7 @@ c---------------------------------------------------------------------
             do j = jst, jend
                do i = ist, iend
                   do m = 1, 5
-                     u( m, i, j, k ) = u( m, i, j, k )
+                     u_n( m, i, j, k ) = u_o( m, i, j, k )
      >                    + tmp * rsd( m, i, j, k )
                   end do
                end do
@@ -173,7 +173,7 @@ c            end if
 c---------------------------------------------------------------------
 c   compute the steady-state residuals
 c---------------------------------------------------------------------
-         call rhs
+         call rhs(u_n)
  
 c---------------------------------------------------------------------
 c   compute the max-norms of newton iteration residuals
@@ -203,15 +203,15 @@ c---------------------------------------------------------------------
          end if
 
 c-----------------kai---------------------------------------                                                                                      
-         call c_dram_cache_cp(ptr_u_copy, ptr_u, sizeof(u))
+c         call c_dram_cache_cp(ptr_u_copy, ptr_u, sizeof(u))
 c         call c_dram_cache_move(ptr_u_copy, ptr_u, sizeof(u))
 
 c         call c_memwrite(ptr_u_copy, sizeof(tmp), sizeof(u_copy), 
 c     >        curr_rank, 1)                                                                                
 c         call c_memwrite(ptr_u_copy, sizeof(tmp), sizeof(u_copy),
 c     >        curr_rank, 2)
-         call c_memwrite(ptr_u_copy, sizeof(tmp), sizeof(u_copy),
-     >        curr_rank, 3)  
+c         call c_memwrite(ptr_u_copy, sizeof(tmp), sizeof(u_copy),
+c     >        curr_rank, 3)  
   
 c         call c_memmove_movnt(ptr_u_copy2, ptr_u_copy, sizeof(u))                                                                     
 c         call c_memcpy(ptr_u_copy2, ptr_u_copy, sizeof(u))                                                                               

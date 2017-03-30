@@ -154,20 +154,28 @@ c---------------------------------------------------------------------
 c---------------------------------------------------------------------
 c   field variables and residuals
 c---------------------------------------------------------------------
-      double precision u(5,-1:isiz1+2,-1:isiz2+2,isiz3),
+      double precision 
+     >       u(5,-1:isiz1+2,-1:isiz2+2,isiz3),
+     >       u_n(5,-1:isiz1+2,-1:isiz2+2,isiz3),
+     >       u_o(5,-1:isiz1+2,-1:isiz2+2,isiz3),
      >       rsd(5,-1:isiz1+2,-1:isiz2+2,isiz3),
      >       frct(5,-1:isiz1+2,-1:isiz2+2,isiz3),
      >       flux(5,0:isiz1+1,0:isiz2+1,isiz3),
      >       u_copy(5,-1:isiz1+2,-1:isiz2+2,isiz3),
      >       u_copy2(5,-1:isiz1+2,-1:isiz2+2,isiz3)
+
       pointer(ptr_u, u)
+      pointer(ptr_u_n, u_o)
+      pointer(ptr_u_o, u_n)
+
       pointer(ptr_rsd, rsd)
       pointer(ptr_frct, frct)
       pointer(ptr_flux, flux)
       pointer(ptr_u_copy, u_copy)
       pointer(ptr_u_copy2, u_copy2)
 
-      common/cvar/ ptr_u,
+      common/cvar/ 
+     >             ptr_u,ptr_u_n,ptr_u_o,
      >             ptr_rsd,
      >             ptr_frct,
      >             ptr_flux,
