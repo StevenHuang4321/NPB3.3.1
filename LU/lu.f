@@ -149,7 +149,7 @@ c      call c_openmp_init(4)
       call unimem_malloc(ptr_dssp, sizeof(dssp), data_pos)
 
 c      call unimem_malloc(ptr_u, sizeof(u), data_pos)
-      call unimem_malloc(ptr_u, sizeof(u), 1)
+c      call unimem_malloc(ptr_u, sizeof(u), 1)
       call unimem_malloc(ptr_u_n, sizeof(u), 1)
       call unimem_malloc(ptr_u_o, sizeof(u), 1)
 
@@ -277,7 +277,7 @@ c---------------------------------------------------------------------
 c---------------------------------------------------------------------
 c   perform one SSOR iteration to touch all data and program pages 
 c---------------------------------------------------------------------
-      call ssor(1,ptr_u_n,ptr_u_o)
+      call ssor(1)
 
 c---------------------------------------------------------------------
 c   reset the boundary and initial values
@@ -288,7 +288,7 @@ c---------------------------------------------------------------------
 c---------------------------------------------------------------------
 c   perform the SSOR iterations
 c---------------------------------------------------------------------
-      call ssor(itmax,ptr_u_n,ptr_u_o)
+      call ssor(itmax)
 c      call ssor(25)
 c      call ssor(30)
 c---------------------------------------------------------------------

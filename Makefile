@@ -1,6 +1,6 @@
 SHELL=/bin/sh
-CLASS=S
-NPROCS=1
+CLASS=A
+NPROCS=4
 SUBTYPE=
 VERSION=
 SFILE=config/suite.def

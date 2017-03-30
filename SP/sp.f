@@ -449,8 +449,8 @@ c---------------------------------------------------------------------
        call timer_clear(1)
        call timer_start(1)
 
-c       do  step = 1, niter
-       do step = 1, 40
+       do  step = 1, niter
+c       do step = 1, 40
           if (node .eq. root) then
              if (mod(step, 20) .eq. 0 .or. 
      >           step .eq. 1) then
