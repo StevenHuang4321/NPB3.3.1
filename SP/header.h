@@ -233,7 +233,7 @@ c---------------------------------------------------------------------
       parameter (BUF_SIZE=MAX_CELL_DIM*MAX_CELL_DIM*(maxcells-1)*60*2+1)
 
       double precision 
-c     >   u       (-2:IMAXP+1,-2:JMAXP+1,-2:KMAX+1, 5,maxcells),
+     >   u       (-2:IMAXP+1,-2:JMAXP+1,-2:KMAX+1, 5,maxcells),
      >   u_n     (-2:IMAXP+1,-2:JMAXP+1,-2:KMAX+1, 5,maxcells),
      >   u_o     (-2:IMAXP+1,-2:JMAXP+1,-2:KMAX+1, 5,maxcells),
      >   us      (-1:IMAX,   -1:JMAX,   -1:KMAX,     maxcells),
