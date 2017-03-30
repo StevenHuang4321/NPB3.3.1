@@ -234,6 +234,8 @@ c---------------------------------------------------------------------
 
       double precision 
      >   u       (-2:IMAXP+1,-2:JMAXP+1,-2:KMAX+1, 5,maxcells),
+     >   u_n     (-2:IMAXP+1,-2:JMAXP+1,-2:KMAX+1, 5,maxcells),
+     >   u_o     (-2:IMAXP+1,-2:JMAXP+1,-2:KMAX+1, 5,maxcells),
      >   us      (-1:IMAX,   -1:JMAX,   -1:KMAX,     maxcells),
      >   vs      (-1:IMAX,   -1:JMAX,   -1:KMAX,     maxcells),
      >   ws      (-1:IMAX,   -1:JMAX,   -1:KMAX,     maxcells),
@@ -249,7 +251,9 @@ c---------------------------------------------------------------------
      >   u_copy  (-2:IMAXP+1,-2:JMAXP+1,-2:KMAX+1, 5,maxcells),
      >   u_copy2 (-2:IMAXP+1,-2:JMAXP+1,-2:KMAX+1, 5,maxcells)
 
-      pointer(ptr_u, u)
+c      pointer(ptr_u, u)
+      pointer(ptr_u_n, u_o)
+      pointer(ptr_u_o, u_n)
       pointer(ptr_us, us)
       pointer(ptr_vs, vs)
       pointer(ptr_ws, ws)
@@ -267,7 +271,7 @@ c---------------------------------------------------------------------
       pointer(ptr_u_copy2, u_copy2)
 
 
-      common /fields/  ptr_u, ptr_us, ptr_vs, ptr_ws, 
+      common /fields/  ptr_u_n, ptr_u_o,ptr_us, ptr_vs, ptr_ws, 
      >                 ptr_qs, ptr_ainv, ptr_rho_i, 
      >                 ptr_speed, ptr_square, 
      >                 ptr_rhs, ptr_forcing, ptr_lhs, 

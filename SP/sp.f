@@ -228,7 +228,9 @@ c--------------------------------------kai----------------------------
        call unimem_malloc(ptr_BUF_SIZE, sizeof(BUF_SIZE), data_pos)
 
 c       call unimem_malloc(ptr_u, sizeof(u), data_pos)
-       call unimem_malloc(ptr_u, sizeof(u), 1)
+c      call unimem_malloc(ptr_u, sizeof(u), 1)
+      call unimem_malloc(ptr_u_n, sizeof(u), 1)
+      call unimem_malloc(ptr_u_o, sizeof(u), 1)
 
        call unimem_malloc(ptr_us, sizeof(us), data_pos)
        call unimem_malloc(ptr_vs, sizeof(vs), data_pos)
@@ -424,7 +426,7 @@ c
 
        call set_constants
 
-       call initialize
+       call initialize(u_n)
 
        call lhsinit
 
@@ -435,8 +437,8 @@ c
 c---------------------------------------------------------------------
 c      do one time step to touch all code, and reinitialize
 c---------------------------------------------------------------------
-       call adi
-       call initialize
+       call adi(u_n,u_o)
+       call initialize(u_n)
 
 c---------------------------------------------------------------------
 c      Synchronize before placing time stamp
@@ -450,7 +452,7 @@ c---------------------------------------------------------------------
        call timer_start(1)
 
        do  step = 1, niter
-c       do step = 1, 40
+         call c_switch(ptr_u_n,ptr_u_o)
           if (node .eq. root) then
              if (mod(step, 20) .eq. 0 .or. 
      >           step .eq. 1) then
@@ -459,18 +461,18 @@ c       do step = 1, 40
               endif
           endif
 
-          call adi
+          call adi(u_n,u_o)
 
 c----------------kai-----------------------------                                                                                                 
-          call c_dram_cache_cp(ptr_u_copy, ptr_u, sizeof(u))
+c          call c_dram_cache_cp(ptr_u_copy, ptr_u, sizeof(u))
 c          call c_dram_cache_move(ptr_u_copy, ptr_u, sizeof(u))
 
 c         call c_memwrite(ptr_u_copy, sizeof(t), sizeof(u_copy), 
 c     >         curr_rank, 1)                                                                                  
 c         call c_memwrite(ptr_u_copy, sizeof(t), sizeof(u_copy),
 c     >         curr_rank, 2)
-         call c_memwrite(ptr_u_copy, sizeof(t), sizeof(u_copy),
-     >         curr_rank, 3)
+c         call c_memwrite(ptr_u_copy, sizeof(t), sizeof(u_copy),
+c     >         curr_rank, 3)
 c          call c_memcpy(ptr_u_copy2, ptr_u_copy, sizeof(u_copy))
 c          call c_memmove_movnt(ptr_u_copy2, ptr_u_copy, sizeof(u_copy))                                                                          
 c------------------------------------------------- 
@@ -483,7 +485,7 @@ c-------------------------------------------------
 c------------kai---------
        call c_print_timer(curr_rank)
 c-----------------------
-       call verify(niter, class, verified)
+       call verify(u_n,niter, class, verified)
 
        call mpi_reduce(t, tmax, 1, 
      >                 dp_type, MPI_MAX, 
